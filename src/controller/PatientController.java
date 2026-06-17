@@ -1,58 +1,25 @@
-package controller;
+package application;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.TextField;
 
 public class PatientController {
 
-    @FXML
-    private TextField txtNom;
+    @FXML private TextField nom;
+    @FXML private TextField prenom;
 
     @FXML
-    private TextField txtPrenom;
-
-    @FXML
-    private TextField txtTelephone;
-
-    @FXML
-    private TextArea txtAdresse;
-
-    @FXML
-    private DatePicker dateNaissance;
-
-    @FXML
-    private RadioButton rbHomme;
-
-    @FXML
-    private RadioButton rbFemme;
-
-    @FXML
-    private TableView<?> tablePatients;
-
-    @FXML
-    private void ajouterPatient() {
-
-        System.out.println("Patient ajouté");
+    private void addPatient() {
+        System.out.println("Ajout: " + nom.getText());
     }
 
     @FXML
-    private void modifierPatient() {
-
-        System.out.println("Patient modifié");
+    private void updatePatient() {
+        System.out.println("Modification");
     }
 
     @FXML
-    private void supprimerPatient() {
-
-        System.out.println("Patient supprimé");
-    }
-
-    @FXML
-    private void viderChamps() {
-
-        txtNom.clear();
-        txtPrenom.clear();
-        txtTelephone.clear();
-        txtAdresse.clear();
+    private void deletePatient() {
+        System.out.println("Suppression");
     }
 }
