@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.MainController">
+
+    <top>
+        <Label text="Gestion Clinique - Dashboard"
+               style="-fx-font-size: 18px; -fx-padding: 10;" />
+    </top>
+
+</BorderPane>

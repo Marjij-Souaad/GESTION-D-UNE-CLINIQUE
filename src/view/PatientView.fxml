@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.PatientController"
+      spacing="10">
+
+    <Label text="Gestion des Patients" style="-fx-font-size: 18px;" />
+
+    <TextField fx:id="txtNom" promptText="Nom"/>
+    <TextField fx:id="txtPrenom" promptText="Prénom"/>
+
+    <Button text="Ajouter"/>
+</VBox>

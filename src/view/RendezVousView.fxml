@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.RendezVousController"
+      spacing="10">
+
+    <Label text="Rendez-vous" style="-fx-font-size: 18px;" />
+
+    <DatePicker fx:id="dateRdv"/>
+    <TextField fx:id="txtHeure" promptText="Heure"/>
+    <TextArea fx:id="txtMotif" promptText="Motif"/>
+
+    <Button text="Ajouter RDV"/>
+</VBox>
