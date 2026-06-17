@@ -22,7 +22,7 @@ public class LoginController {
 
             try {
                 FXMLLoader loader = new FXMLLoader(
-                        getClass().getResource("/view/DashboardView.fxml")
+                        getClass().getResource("/view/MainView.fxml")
                 );
 
                 Scene scene = new Scene(loader.load());

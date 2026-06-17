@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<VBox spacing="10" alignment="CENTER"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.PatientController"
+      style="-fx-padding: 20;">
+
+    <Label text="GESTION PATIENTS" styleClass="title-label"/>
+
+    <GridPane hgap="10" vgap="10" alignment="CENTER">
+        <Label text="Nom:" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="label"/>
+        <TextField fx:id="txtNom" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Prénom:" GridPane.rowIndex="0" GridPane.columnIndex="2" styleClass="label"/>
+        <TextField fx:id="txtPrenom" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Label text="Sexe:" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="label"/>
+        <ComboBox fx:id="cbSexe" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="150"/>
+
+        <Label text="Date Naissance:" GridPane.rowIndex="1" GridPane.columnIndex="2" styleClass="label"/>
+        <DatePicker fx:id="dpDateNaissance" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+        <Label text="Téléphone:" GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="label"/>
+        <TextField fx:id="txtTelephone" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Adresse:" GridPane.rowIndex="2" GridPane.columnIndex="2" styleClass="label"/>
+        <TextField fx:id="txtAdresse" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+    </GridPane>
+
+    <!-- CRUD -->
+    <HBox spacing="15" alignment="CENTER" style="-fx-padding: 10 0 10 0;">
+        <Button text="➕ Ajouter" onAction="#addPatient" styleClass="button, btn-add"/>
+        <Button text="✏️ Modifier" onAction="#updatePatient" styleClass="button, btn-update"/>
+        <Button text="🗑️ Supprimer" onAction="#deletePatient" styleClass="button, btn-delete"/>
+        <Button text="🧹 Vider" onAction="#clearFields" styleClass="button, btn-clear"/>
+    </HBox>
+
+    <!-- TABLE -->
+    <TableView fx:id="tablePatients" prefHeight="300" VBox.vgrow="ALWAYS" styleClass="table-view">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colNom" text="Nom" prefWidth="100"/>
+            <TableColumn fx:id="colPrenom" text="Prénom" prefWidth="100"/>
+            <TableColumn fx:id="colSexe" text="Sexe" prefWidth="80"/>
+            <TableColumn fx:id="colDateNaissance" text="Date Naissance" prefWidth="120"/>
+            <TableColumn fx:id="colTelephone" text="Téléphone" prefWidth="120"/>
+            <TableColumn fx:id="colAdresse" text="Adresse" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+</VBox>

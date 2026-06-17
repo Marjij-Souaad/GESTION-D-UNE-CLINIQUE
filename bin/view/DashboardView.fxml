@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="controller.DashboardController"
-      spacing="10"
-      alignment="CENTER">
+      spacing="10" alignment="CENTER">
 
-    <Label text="Dashboard" style="-fx-font-size: 20px;" />
+    <Label fx:id="lblPatients" text="Patients"/>
+    <Label fx:id="lblRdv" text="Rendez-vous"/>
+
+    <ProgressBar fx:id="progressBar" progress="0.5"/>
+    <ProgressIndicator fx:id="progressIndicator"/>
+
+    <ColorPicker fx:id="colorPicker" onAction="#changeColor"/>
 
 </VBox>

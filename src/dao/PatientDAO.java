@@ -9,8 +9,13 @@ import java.util.List;
 public class PatientDAO {
 
     public void ajouter(Patient p) {
+        Connection conn = Database.getConnection();
+        if (conn == null) {
+            System.err.println("Erreur : Connexion à la base de données impossible.");
+            return;
+        }
         String sql = "INSERT INTO patients (nom, prenom, sexe, date_naissance, telephone, adresse) VALUES (?, ?, ?, ?, ?, ?)";
-        try (PreparedStatement ps = Database.getConnection().prepareStatement(sql)) {
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, p.getNom());
             ps.setString(2, p.getPrenom());
             ps.setString(3, p.getSexe());
@@ -25,8 +30,13 @@ public class PatientDAO {
 
     public List<Patient> getAll() {
         List<Patient> liste = new ArrayList<>();
+        Connection conn = Database.getConnection();
+        if (conn == null) {
+            System.err.println("Erreur : Connexion à la base de données impossible.");
+            return liste;
+        }
         String sql = "SELECT * FROM patients";
-        try (Statement st = Database.getConnection().createStatement();
+        try (Statement st = conn.createStatement();
              ResultSet rs = st.executeQuery(sql)) {
             while (rs.next()) {
                 Patient p = new Patient();
@@ -46,8 +56,13 @@ public class PatientDAO {
     }
 
     public void modifier(Patient p) {
+        Connection conn = Database.getConnection();
+        if (conn == null) {
+            System.err.println("Erreur : Connexion à la base de données impossible.");
+            return;
+        }
         String sql = "UPDATE patients SET nom=?, prenom=?, sexe=?, date_naissance=?, telephone=?, adresse=? WHERE id=?";
-        try (PreparedStatement ps = Database.getConnection().prepareStatement(sql)) {
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, p.getNom());
             ps.setString(2, p.getPrenom());
             ps.setString(3, p.getSexe());
@@ -62,8 +77,13 @@ public class PatientDAO {
     }
 
     public void supprimer(int id) {
+        Connection conn = Database.getConnection();
+        if (conn == null) {
+            System.err.println("Erreur : Connexion à la base de données impossible.");
+            return;
+        }
         String sql = "DELETE FROM patients WHERE id=?";
-        try (PreparedStatement ps = Database.getConnection().prepareStatement(sql)) {
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, id);
             ps.executeUpdate();
         } catch (SQLException e) {
