@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml">
+
+    <top>
+        <MenuBar>
+
+            <Menu text="Fichier">
+                <items>
+                    <MenuItem text="Quitter"/>
+                </items>
+            </Menu>
+
+            <Menu text="Aide">
+                <items>
+                    <MenuItem text="À propos"/>
+                </items>
+            </Menu>
+
+        </MenuBar>
+    </top>
+
+    <center>
+        <TabPane>
+
+            <Tab text="Patients">
+                <content>
+                    <Label text="Gestion Patients"/>
+                </content>
+            </Tab>
+
+            <Tab text="Rendez-vous">
+                <content>
+                    <Label text="Gestion Rendez-vous"/>
+                </content>
+            </Tab>
+
+            <Tab text="Statistiques">
+                <content>
+                    <Label text="Tableau de bord"/>
+                </content>
+            </Tab>
+
+        </TabPane>
+    </center>
+
+</BorderPane>
