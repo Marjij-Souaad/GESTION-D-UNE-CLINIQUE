@@ -1,5 +1,6 @@
 {
     "java.project.referencedLibraries": [
-        "C:\\Users\\HP SOUAD\\Downloads\\openjfx-17.0.19_windows-x64_bin-sdk\\javafx-sdk-17.0.19\\lib\\*.jar"
+        "C:\\Users\\HP SOUAD\\Downloads\\openjfx-17.0.19_windows-x64_bin-sdk\\javafx-sdk-17.0.19\\lib\\*.jar",
+        "C:\\Users\\HP SOUAD\\Downloads\\gestion du clinique\\lib\\mysql-connector-j-9.7.0.jar"
     ]
 }
