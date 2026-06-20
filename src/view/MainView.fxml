@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.MainController"
+            prefHeight="600.0" prefWidth="900.0"
+            stylesheets="@../css/style.css">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" styleClass="header-bar">
+            <Label text="CLINIC DASHBOARD" styleClass="header-title"/>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="10" styleClass="sidebar" prefWidth="200">
+            <Button text="👤 Patients" maxWidth="Infinity" onAction="#openPatients" styleClass="sidebar-btn"/>
+            <Button text="📅 Rendez-Vous" maxWidth="Infinity" onAction="#openRendezVous" styleClass="sidebar-btn"/>
+        </VBox>
+    </left>
+
+    <center>
+        <BorderPane fx:id="mainPane" style="-fx-padding: 20;"/>
+    </center>
+
+</BorderPane>

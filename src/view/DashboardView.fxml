@@ -1,0 +1,14 @@
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.DashboardController"
+      spacing="10" alignment="CENTER">
+
+    <Label fx:id="lblPatients" text="Patients"/>
+    <Label fx:id="lblRdv" text="Rendez-vous"/>
+
+    <ProgressBar fx:id="progressBar" progress="0.5"/>
+    <ProgressIndicator fx:id="progressIndicator"/>
+
+    <ColorPicker fx:id="colorPicker" onAction="#changeColor"/>
+
+</VBox>

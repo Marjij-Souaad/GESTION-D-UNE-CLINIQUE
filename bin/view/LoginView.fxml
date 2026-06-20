@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="application.LoginController"
+           prefHeight="500.0" prefWidth="400.0"
+           stylesheets="@../css/style.css"
+           styleClass="login-root">
+
+    <VBox styleClass="login-card">
+        <!-- Logo / Icon -->
+        <VBox styleClass="login-icon-container">
+            <Label text="🏥" styleClass="login-icon"/>
+            <Label text="GESTION CLINIQUE" styleClass="login-title"/>
+            <Label text="Espace d'administration" styleClass="login-subtitle"/>
+        </VBox>
+
+        <!-- Username field -->
+        <VBox styleClass="login-field-container">
+            <Label text="Nom d'utilisateur" styleClass="login-label"/>
+            <TextField fx:id="username" promptText="Entrez votre identifiant" styleClass="login-input"/>
+        </VBox>
+
+        <!-- Password field -->
+        <VBox styleClass="login-field-container">
+            <Label text="Mot de passe" styleClass="login-label"/>
+            <PasswordField fx:id="password" promptText="••••••••" styleClass="login-input"/>
+        </VBox>
+
+        <!-- Error Message -->
+        <Label fx:id="message" styleClass="login-message" wrapText="true"/>
+
+        <!-- Action Button -->
+        <Button text="Se connecter" onAction="#login" styleClass="login-btn"/>
+    </VBox>
+
+</StackPane>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<VBox spacing="10" alignment="CENTER"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.RendezVousController"
+      style="-fx-padding: 20;">
+
+    <Label text="GESTION RENDEZ-VOUS" styleClass="title-label"/>
+
+    <GridPane hgap="10" vgap="10" alignment="CENTER">
+        <Label text="Patient ID:" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="label"/>
+        <ComboBox fx:id="cbPatient" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="150"/>
+
+        <Label text="Date:" GridPane.rowIndex="0" GridPane.columnIndex="2" styleClass="label"/>
+        <DatePicker fx:id="dateRdv" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Label text="Heure:" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="label"/>
+        <TextField fx:id="txtHeure" GridPane.rowIndex="1" GridPane.columnIndex="1" promptText="HH:mm"/>
+
+        <Label text="Motif:" GridPane.rowIndex="1" GridPane.columnIndex="2" styleClass="label"/>
+        <TextArea fx:id="txtMotif" GridPane.rowIndex="1" GridPane.columnIndex="3" prefRowCount="2" prefColumnCount="15"/>
+
+        <Label text="Urgence (1-5):" GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="label"/>
+        <Slider fx:id="sliderUrgence" GridPane.rowIndex="2" GridPane.columnIndex="1" min="1" max="5" showTickLabels="true" showTickMarks="true" majorTickUnit="1" minorTickCount="0" snapToTicks="true"/>
+
+        <Label text="Statut:" GridPane.rowIndex="2" GridPane.columnIndex="2" styleClass="label"/>
+        <ComboBox fx:id="cbStatut" GridPane.rowIndex="2" GridPane.columnIndex="3" prefWidth="150"/>
+    </GridPane>
+
+    <!-- CRUD -->
+    <HBox spacing="15" alignment="CENTER" style="-fx-padding: 10 0 10 0;">
+        <Button text="➕ Ajouter" onAction="#ajouterRdv" styleClass="button, btn-add"/>
+        <Button text="✏️ Modifier" onAction="#modifierRdv" styleClass="button, btn-update"/>
+        <Button text="🗑️ Supprimer" onAction="#supprimerRdv" styleClass="button, btn-delete"/>
+        <Button text="🧹 Vider" onAction="#clearFields" styleClass="button, btn-clear"/>
+    </HBox>
+
+    <!-- TABLE -->
+    <TableView fx:id="tableRdv" prefHeight="300" VBox.vgrow="ALWAYS" styleClass="table-view">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colPatientId" text="Patient ID" prefWidth="80"/>
+            <TableColumn fx:id="colDate" text="Date" prefWidth="100"/>
+            <TableColumn fx:id="colHeure" text="Heure" prefWidth="80"/>
+            <TableColumn fx:id="colMotif" text="Motif" prefWidth="150"/>
+            <TableColumn fx:id="colUrgence" text="Urgence" prefWidth="60"/>
+            <TableColumn fx:id="colStatut" text="Statut" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+</VBox>

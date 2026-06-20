@@ -10,12 +10,13 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-               FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/application/view/MainView.fxml"));
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("/view/LoginView.fxml")
+        );
 
         Scene scene = new Scene(loader.load());
 
-        stage.setTitle("Gestion Clinique");
+        stage.setTitle("Clinique App");
         stage.setScene(scene);
         stage.show();
     }

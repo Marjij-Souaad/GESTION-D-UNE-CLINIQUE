@@ -9,8 +9,13 @@ import java.util.List;
 public class RendezVousDAO {
 
     public void ajouter(RendezVous r) {
+        Connection conn = Database.getConnection();
+        if (conn == null) {
+            System.err.println("Erreur : Connexion à la base de données impossible.");
+            return;
+        }
         String sql = "INSERT INTO rendezvous (patient_id, date_rdv, heure, motif, urgence, statut) VALUES (?, ?, ?, ?, ?, ?)";
-        try (PreparedStatement ps = Database.getConnection().prepareStatement(sql)) {
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, r.getPatientId());
             ps.setDate(2, Date.valueOf(r.getDateRdv()));
             ps.setString(3, r.getHeure());
@@ -25,8 +30,13 @@ public class RendezVousDAO {
 
     public List<RendezVous> getAll() {
         List<RendezVous> liste = new ArrayList<>();
+        Connection conn = Database.getConnection();
+        if (conn == null) {
+            System.err.println("Erreur : Connexion à la base de données impossible.");
+            return liste;
+        }
         String sql = "SELECT * FROM rendezvous";
-        try (Statement st = Database.getConnection().createStatement();
+        try (Statement st = conn.createStatement();
              ResultSet rs = st.executeQuery(sql)) {
             while (rs.next()) {
                 RendezVous r = new RendezVous();
@@ -46,8 +56,13 @@ public class RendezVousDAO {
     }
 
     public void modifier(RendezVous r) {
+        Connection conn = Database.getConnection();
+        if (conn == null) {
+            System.err.println("Erreur : Connexion à la base de données impossible.");
+            return;
+        }
         String sql = "UPDATE rendezvous SET patient_id=?, date_rdv=?, heure=?, motif=?, urgence=?, statut=? WHERE id=?";
-        try (PreparedStatement ps = Database.getConnection().prepareStatement(sql)) {
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, r.getPatientId());
             ps.setDate(2, Date.valueOf(r.getDateRdv()));
             ps.setString(3, r.getHeure());
@@ -62,8 +77,13 @@ public class RendezVousDAO {
     }
 
     public void supprimer(int id) {
+        Connection conn = Database.getConnection();
+        if (conn == null) {
+            System.err.println("Erreur : Connexion à la base de données impossible.");
+            return;
+        }
         String sql = "DELETE FROM rendezvous WHERE id=?";
-        try (PreparedStatement ps = Database.getConnection().prepareStatement(sql)) {
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, id);
             ps.executeUpdate();
         } catch (SQLException e) {
