@@ -104,7 +104,7 @@ Ouvrir `src/application/Main.java` dans VS Code et cliquer sur **Run Java**
 
 ## Démonstration
 
- [Voir la vidéo de démonstration](demonstration/demo.mp4)
+ [Voir la vidéo de démonstration](demonstration/demo.mp4) ou https://drive.google.com/file/d/1f0l1xhxu_tpjauNMvzu9e1eWU7oJXNds/view?usp=sharing
 
  [Voir le rapport PDF](demonstration/Rapport_IHM.pdf)
 
