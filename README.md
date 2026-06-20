@@ -35,6 +35,8 @@ graphique intuitive et une base de données relationnelle.
 ---
 
 ## Structure du projet
+## Structure du projet
+```
 GESTION-D-UNE-CLINIQUE/
 |-- bin/
 |-- demonstration/
@@ -67,8 +69,7 @@ GESTION-D-UNE-CLINIQUE/
 |       |-- patient.fxml
 |       └-- rendezvous.fxml
 └-- schema.sql
----
-
+```
 ##  Prérequis
 
 - JDK 17
